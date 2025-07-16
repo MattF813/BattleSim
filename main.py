@@ -1,5 +1,6 @@
 from character import Character, Hero
 from typing import List
+import winsound
 
 def startEncounter(hero: Character, enemyList: List[Character]):
     while (not hero.killed and len(enemyList) > 0):
@@ -21,6 +22,7 @@ if __name__ == '__main__':
         else:
             print("Class not found. Please try again")
     print("" + mainGuy.name + " wakes up in a dark cave. A fearsome goblin stands in front of them, ready for battle!")
+    winsound.PlaySound("Sounds/GoblinIntro.wav", winsound.SND_FILENAME)
     enemy1 = Character("Goblin", 10, 5)
     enemy2 = Character("Goblin2", 5, 8)
     startEncounter(mainGuy, [enemy1, enemy2])
